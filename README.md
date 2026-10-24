@@ -1,6 +1,6 @@
 # Berkeley presentation — ready for GitHub Pages
 
-Source release: `20261024T190228Z-bad675c8`. Contains 178 reveal states, vector
+Source release: `20261024T225331Z-f9385302`. Contains 178 reveal states, vector
 slides, 26 videos, three interactive figures, and the matching PDF.
 
 ## Upload through GitHub in your browser
