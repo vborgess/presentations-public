@@ -1,0 +1,35 @@
+
+* { box-sizing: border-box; }
+body { margin: 0; background: #eef0f2; color: #202124; font: 15px system-ui,sans-serif; }
+#viewport { position: relative; width: 100%; height: calc(100vh - 86px); height: calc(100dvh - 86px); min-height: 140px; overflow: hidden; }
+#canvas { position: absolute; width: 1600px; height: 1000px; transform-origin: top left; background: white; }
+#slide { display: block; width: 1600px; height: 1000px; }
+#interactive, #interactive-bilinear, #interactive-trilinear { position: absolute; border: 0; background: white; }
+#dispersion { position: absolute; object-fit: fill; }
+#equation-transition { position: absolute; object-fit: fill; pointer-events: none; }
+#transition-cover, #dispersion-cover { position:absolute; object-fit:fill; pointer-events:none; }
+#dispersion, #equation-transition { opacity:0; }
+[hidden] { display: none !important; }
+nav { height: 50px; display: flex; gap: 8px; justify-content: center; align-items: center; padding: 4px 8px; }
+nav button, select { border: 1px solid #c5c8cc; background: white; color: #004a99; border-radius: 5px; padding: 7px 10px; font: inherit; }
+button { cursor: pointer; }
+button:disabled { opacity: .4; cursor: default; }
+button:focus-visible, select:focus-visible { outline: 2px solid #00629b; outline-offset: 2px; }
+#jump { max-width: min(42vw, 340px); }
+#help { text-align: center; margin: 4px 8px; font-size: 12px; color: #647185; }
+#status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+#offline-diagnostics { position:fixed; z-index:300; right:12px; top:12px; max-width:min(620px,95vw);
+  max-height:80vh; overflow:auto; padding:12px; border-radius:8px; background:#fff; border:1px solid #c5c8cc; }
+#offline-log { white-space:pre-wrap; overflow-wrap:anywhere; font-size:12px; }
+body.presenting { background:#000; overflow:hidden; }
+body.presenting #viewport { height:100vh; height:100dvh; }
+body.presenting nav, body.presenting #help, body.presenting #offline-diagnostics { display:none; }
+body.presenting.show-controls nav { display:flex; position:fixed; z-index:200; bottom:24px;
+  left:50%; transform:translateX(-50%); width:max-content; max-width:98vw;
+  height:48px; border-radius:8px; background:rgba(238,240,242,.96); }
+body.presenting.show-controls #help { display:block; position:fixed; bottom:0; left:0; right:0;
+  margin:0; padding:5px; background:rgba(238,240,242,.96); }
+body.presenting.hide-pointer:not(.show-controls) #viewport { cursor:none; }
+@media(max-width:650px) { nav { gap: 5px; } nav button,select { padding: 7px; font-size: 12px; } #help { font-size: 10px; } }
+
+nav a {color:#004a99; font:inherit; padding:7px; white-space:nowrap;}
